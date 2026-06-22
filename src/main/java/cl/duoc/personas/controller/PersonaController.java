@@ -26,7 +26,7 @@ public class PersonaController {
         this.personaService = personaService;
     }
 
-    // Endpoint para listar todas las personas
+    
     @GetMapping
     public List<PersonaDTO> listar() {
         return personaService.listar().stream()
@@ -34,7 +34,6 @@ public class PersonaController {
                 .collect(Collectors.toList());
     }
 
-    // Endpoint para obtener una persona por rut
     @GetMapping("/{rut}")
     public ResponseEntity<PersonaDTO> buscarPorRut(@PathVariable String rut) {
         Persona persona = personaService.buscarPorRut(rut);
@@ -44,7 +43,6 @@ public class PersonaController {
         return ResponseEntity.ok(toDto(persona));
     }
 
-    // Endpoint para crear una nueva persona
     @PostMapping
     public ResponseEntity<PersonaDTO> guardar(@Valid @RequestBody PersonaDTO personaDTO) {
         Persona persona = toEntity(personaDTO);
@@ -52,7 +50,6 @@ public class PersonaController {
         return ResponseEntity.status(HttpStatus.CREATED).body(toDto(personaGuardada));
     }
 
-    // Endpoint para eliminar una persona por id
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> eliminar(@PathVariable Long id) {
         personaService.eliminar(id);
