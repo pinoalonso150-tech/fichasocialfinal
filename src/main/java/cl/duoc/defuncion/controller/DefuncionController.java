@@ -79,3 +79,4 @@ public class DefuncionController {
                 .build();
     }
 }
+// Commit 6 - Ajustes microservicio Defuncion
