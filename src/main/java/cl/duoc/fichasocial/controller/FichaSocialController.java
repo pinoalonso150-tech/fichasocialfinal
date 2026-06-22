@@ -28,3 +28,4 @@ public class FichaSocialController {
         return ResponseEntity.ok(fichaSocial);
     }
 }
+//commit 10 - creacion ficha social 
