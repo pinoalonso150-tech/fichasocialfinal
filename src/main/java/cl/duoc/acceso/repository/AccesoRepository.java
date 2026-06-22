@@ -10,3 +10,4 @@ public interface AccesoRepository extends JpaRepository<Acceso, Long> {
 
     List<Acceso> findByRutFuncionario(String rutFuncionario);
 }
+// Commit 3
